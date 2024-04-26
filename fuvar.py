@@ -8,6 +8,13 @@ class Fuvar:
         self.borravalo = borravalo
         self.fizetes = fizetes
 
+def tizedes(szam):
+    if ',' in szam:
+        szam = szam.replace(',', '.')
+    elif '.' in szam:
+        szam = szam.replace('.', ',')
+    return szam
+
 fajl = open('fuvar.csv', 'rt', encoding='utf-8')
 fajl.readline()
 
@@ -18,3 +25,12 @@ for sor in fajl:
     fuvarok.append(Fuvar(sor[0], sor[1], sor[2], sor[3], sor[4], sor[5], sor[6]))
 
 print('3. feladat:', len(fuvarok), 'fuvar')
+
+hanyfuvar = 0
+bevetel = 0
+for f in fuvarok:
+    if f.azonosito == "6185":
+        hanyfuvar += 1
+        bevetel += float(tizedes(f.viteldij))
+
+print(f'4. feladat: {hanyfuvar} fuvar alatt: {tizedes(str(bevetel))}$')
