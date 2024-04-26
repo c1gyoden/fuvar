@@ -17,3 +17,4 @@ for sor in fajl:
     sor = sor.strip().split(';')
     fuvarok.append(Fuvar(sor[0], sor[1], sor[2], sor[3], sor[4], sor[5], sor[6]))
 
+print('3. feladat:', len(fuvarok), 'fuvar')
