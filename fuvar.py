@@ -34,3 +34,15 @@ for f in fuvarok:
         bevetel += float(tizedes(f.viteldij))
 
 print(f'4. feladat: {hanyfuvar} fuvar alatt: {tizedes(str(bevetel))}$')
+
+
+stat = {}
+for f in fuvarok:
+    if f.fizetes in stat.keys():
+        stat[f.fizetes] += 1
+    else:
+        stat[f.fizetes] = 1
+
+print('5. feladat:')
+for k,v in stat.items():
+    print(f'\t{k}: {v} fuvar')
